@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Lobster&display=swap');
+
+.name {
+    color: #b45a22;
+    padding:5%;
+    font-family: Lobster;
+    font-size:300%
+}
+
+.btn {
+    display:flex;
+    margin-right:100px;
+    
+}
+
+#slogan{
+    color:#625866;
+    
+
+}

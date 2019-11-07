@@ -1,0 +1,31 @@
+/* @import url('https://fonts.googleapis.com/css?family=Lato:300|Lobster&display=swap'); */
+
+
+Main {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color:#BF7785;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+footer{
+  display:flex;
+  justify-content: center;
+}
+
+/* .auth-container {
+  font-family: 'Lobster', cursive;
+} */
