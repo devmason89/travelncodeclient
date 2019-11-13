@@ -26,6 +26,56 @@ footer{
   justify-content: center;
 }
 
+
+/*Header*/
+
+
 /* .auth-container {
   font-family: 'Lobster', cursive;
 } */
+
+/*Sidebar*/
+.sidebar {
+  display:flex;
+  /* opacity:50%; */
+  color:#5a4a5c; 
+  margin-top: 10px;
+  
+}
+
+.sidebar-list-styling {
+  padding-left: 50px;
+  padding-top: 15px;
+  width: 10%;
+  color:#b68664;
+  
+}
+
+.sidebar-list a{
+  color: #6c757c;
+  padding:0;
+  display:flex;
+  flex-wrap:nowrap;
+}
+
+.sidebar-route {
+  flex: 1;
+  padding: '00px';
+  /* display:flex;
+  flex-wrap:nowrap; */
+}
+
+.mainMission {
+  backgroundcolor:white;
+
+}
+
+
+
+
+/*Office Styling*/
+
+.modalButton {
+  margin-right: 100%;
+}
+

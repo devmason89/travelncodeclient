@@ -2,6 +2,12 @@ import React, {useState} from 'react';
 import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Button,Input} from 'reactstrap'
 
 const OfficeEdit = (props) => {
+
+    const [closeModal, setCloseModal]= useState('false')
+    
+    const toggleModal = () => {
+        setCloseModal(!closeModal)
+    }
     // console.log(props)
 
     // const req = {
@@ -37,8 +43,9 @@ const OfficeEdit = (props) => {
 
     return(
         <Button onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
-        <Modal isOpen={props.updateOffice}>
+        <Modal id = "updateModal"isOpen={props.updateOffice}>
             <ModalHeader>Edit a Past Office</ModalHeader>
+            <Button id= "modalButton" onClick={toggleModal} close />
                 <ModalBody>
                     <Form onSubmit = {officeUpdate} body={props.office.body}>
                         <FormGroup>

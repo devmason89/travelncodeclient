@@ -5,6 +5,7 @@ Container, Row, Button} from 'reactstrap';
 import styled from 'styled-components';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
+import OfficeCreate from '../officeSub/OfficeCreate'
 
 
 const Resize = styled.img`
@@ -15,6 +16,13 @@ const Resize = styled.img`
 `      
 
 const OfficeCard = (props) => {
+    const [isCreateShown, setCreateShown] = useState(false);
+
+   const handleCreate = (e) => {
+        e.preventDefault();
+        setCreateShown(true)  //changing state here
+    }
+
     console.log(props)
 
      const deleteOffice =(office)=> {
@@ -64,7 +72,9 @@ const OfficeCard = (props) => {
             <Row>
                 <Card>
                     <CardTitle>MY PAST OFFICES
-                            <Button> <img src={Plus}  onClick={props.OfficeCreate} /></Button> 
+                            <img src={Plus}  onClick={handleCreate} />
+                            {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} token={props.token}/>}
+                            {/* <OfficeCreate fetchOffices={props.fetchOffices}/> */}
                     </CardTitle>
                     <CardBody>
                     <CardText>

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import Header from './Header';
-import About from './Mission';
 import Footer from './Footer';
+import {BrowserRouter as Router} from 'react-router-dom'; 
 import OfficeIndex from './offices/OfficeIndex';
 import Auth from './auth/Auth';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+ 
 
 const Main = () => {
     const [sessionToken, setSessionToken] = useState('')
@@ -26,17 +26,14 @@ const Main = () => {
         setSessionToken('');
     }  //resets my session and clears my token
 
-    // const protectionOn = () => {
-    // return(sessionToken === localStorage.getItem('token') ? <OfficeIndex token = {sessionToken}/> : <Auth updateToken={updateToken}/>)
-
 
     return (
-        <div>
-                <Header clickLogout ={clearToken} updateToken={updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>
+       <div>
+                <Router>
+                <Header className="navHeader" clickLogout ={clearToken} updateToken={updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>
+                </Router>
                 <Footer />
-                 {/* {protectionOn() } */}
-                
-        </div>
+       </div>         
     )
 }
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {
-  Card, CardText, CardBody,
+  Card, CardText, CardTitle, CardBody,
    Button, Carousel,
    Container,
    Label, Input
@@ -37,17 +37,17 @@ const OfficeCreate = (props) => {
     }
 
 return (
-    <Container>
-        <h1> Create a New Office </h1>
-        <Carousel onClick={(e) => handleSubmit(e)}>
             <Card>
+                <CardTitle>
+                <h1> Create a New Office </h1>
+                </CardTitle>
                 <CardBody>
                     <CardText>
-                        <Label htmlFor="name"/>
+                        <Label htmlFor="name"> Name </Label>
                         <Input name="name" value={name} onChange={(e)=> setName(e.target.value)}>
                         </Input>
 
-                        <Label htmlFor="type"/>
+                        <Label htmlFor="type"> Type of Establishment </Label>
                         <Input name="type" value={type} onChange={(e)=> setType(e.target.value)}>
                             <option value="Cafe">Cafe</option>
                             <option value="Library">Library</option>
@@ -56,28 +56,25 @@ return (
                             <option value="Other">Other - please define in comment section.</option>
                             </Input>
 
-                            <Label htmlFor="freeWifi"/>
+                            <Label htmlFor="freeWifi"> Free Wifi </Label>
                             <Input name="freeWifi" value={freeWifi} onChange={(e)=> setFreeWifi(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="freeRestroom"/>
+                            <Label htmlFor="freeRestroom"> Free Restroom</Label>
                             <Input name="freeRestroom" value={freeRestroom} onChange={(e)=> setFreeRestroom(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="comments"/>
+                            <Label htmlFor="comments"> Comments </Label>
                             <Input name="comments" value={comments} onChange={(e)=> setComments(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="rating"/>
+                            <Label htmlFor="rating"> Rating </Label>
                             <Input name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
                             </Input>
-                            <Button type="submit">Create Office.</Button>
+                            <Button type="submit" onClick={(e) => handleSubmit(e)}>Create Office.</Button>
                      </CardText>
                 </CardBody>
             </Card>
-        </Carousel>
-    </Container>
-
 )
 }
 
