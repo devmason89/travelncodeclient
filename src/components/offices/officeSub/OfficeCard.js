@@ -1,0 +1,82 @@
+import React, {useState} from 'react';
+import {
+  Card, CardText, CardBody,CardTitle, 
+Container, Row, Button} from 'reactstrap';
+import styled from 'styled-components';
+import Plus from '../../assets/plus.png';
+import OfficeEdit from '../officeSub/OfficeEdit'
+
+
+const Resize = styled.img`
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 20px 0 auto;
+`      
+
+const OfficeCard = (props) => {
+    console.log(props)
+
+     const deleteOffice =(office)=> {
+         fetch(`http://localhost:3000/office/${office.id}`, 
+         {
+             method: 'DELETE',
+             headers: new Headers ({
+                 'Content-Type': 'application/json',
+                 'Authorization': props.token
+             })
+         })
+         .then(() => props.fetchOffices())
+     }
+
+     const officeMapper = () => {
+         if(props.offices != (''))
+        {
+         return props.offices.map((office, index) => {
+             return(
+                 <Card key={index}>
+                     <CardTitle>
+                         {office.name}
+                     </CardTitle>
+                     <CardText> Type:&nbsp;
+                         {office.type}
+                     </CardText>
+                     <CardText>Free Wifi: &nbsp; {String(office.freeWifi)[0].toUpperCase()+ String(office.freeWifi).slice(1)} </CardText>
+                    <CardText>Free Restroom: &nbsp; {String(office.freeRestroom)[0].toUpperCase()+String(office.freeRestroom).slice(1)}</CardText>
+                    <CardText>Comments: &nbsp; {office.comments}</CardText>
+                    <CardText>Rating:&nbsp; {office.rating}</CardText>
+                    <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
+                   />
+                        <Button onClick={() => {deleteOffice(office)}}>Delete</Button>
+                 </Card>
+             )
+         })
+     } else { 
+         return(
+             <p>No Offices Created.</p>   
+         )
+     }
+    }
+
+    
+    return (
+        <Container>
+            <Row>
+                <Card>
+                    <CardTitle>MY PAST OFFICES
+                            <Button> <img src={Plus}  onClick={props.OfficeCreate} /></Button> 
+                    </CardTitle>
+                    <CardBody>
+                    <CardText>
+                    {officeMapper(props)}
+                    </CardText>
+                    </CardBody>
+                </Card>
+                </Row>
+        </Container>
+
+    )
+}
+
+
+export default OfficeCard;

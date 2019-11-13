@@ -2,19 +2,21 @@
 
 .name {
     color: #b45a22;
-    padding:5%;
+    
     font-family: Lobster;
     font-size:300%
 }
 
 .btn {
     display:flex;
-    margin-right:100px;
+    align-content:space-between;
+    order:1;
     
 }
 
 #slogan{
     color:#625866;
+    border: 5px 5px 5px 5px;
     
 
 }

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Header from './Header';
-import About from './About';
+import About from './Mission';
 import Footer from './Footer';
 import OfficeIndex from './offices/OfficeIndex';
 import Auth from './auth/Auth';
@@ -26,15 +26,15 @@ const Main = () => {
         setSessionToken('');
     }  //resets my session and clears my token
 
-    const protectionOn = () => {
-    return(sessionToken === localStorage.getItem('token') ? <OfficeIndex token = {sessionToken}/> : <Auth updateToken={updateToken}/>)
-}
+    // const protectionOn = () => {
+    // return(sessionToken === localStorage.getItem('token') ? <OfficeIndex token = {sessionToken}/> : <Auth updateToken={updateToken}/>)
+
 
     return (
         <div>
-                <Header clickLogout ={clearToken} updateToken={updateToken} />
+                <Header clickLogout ={clearToken} updateToken={updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>
                 <Footer />
-                 {protectionOn() }
+                 {/* {protectionOn() } */}
                 
         </div>
     )

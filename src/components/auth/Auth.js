@@ -7,12 +7,12 @@ import './Auth.css';
 const Auth= (props) => {   //2 creating functional component. will pull in props to be passed down
     return(
         <Container className="auth-container">
-            <Row>
+            <Row id="rowcenter">
                 <Col md="3">
-                    <Signup updateToken= {props.updateToken} />
+                    <Signup updateToken= {props.updateToken}/>
                 </Col>
                 <Col md="3" className= "login-col">
-                    <Login updateToken = {props.updateToken} />
+                    <Login updateToken = {props.updateToken}/>
                 </Col>
             </Row>
         </Container>

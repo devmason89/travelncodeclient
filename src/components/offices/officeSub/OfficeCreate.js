@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Carousel,
-  CarouselItem, Container,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption, Label, Input
+  Card, CardText, CardBody,
+   Button, Carousel,
+   Container,
+   Label, Input
 } from 'reactstrap';
 
 const OfficeCreate = (props) => {
@@ -34,12 +32,13 @@ const OfficeCreate = (props) => {
             setFreeRestroom('');
             setComments('');
             setRating('');
+            props.fetchOffices();
         })
     }
 
 return (
     <Container>
-        <h1> {props.user.username} 's Office around the world!</h1>
+        <h1> Create a New Office </h1>
         <Carousel onClick={(e) => handleSubmit(e)}>
             <Card>
                 <CardBody>
@@ -72,8 +71,8 @@ return (
                             <Label htmlFor="rating"/>
                             <Input name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
                             </Input>
-                    </CardText>
-                    <Button type="submit">Create Office.</Button>
+                            <Button type="submit">Create Office.</Button>
+                     </CardText>
                 </CardBody>
             </Card>
         </Carousel>

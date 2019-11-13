@@ -1,26 +1,29 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Card, CardImg, CardText, CardBody,CardTitle, CardSubtitle,Button,Row, Col} from 'reactstrap'
-import OfficeCreate from './OfficeCreate'
-import OfficeCard from './OfficeCard'
-import OfficeEdit from './OfficeEdit'
+import OfficeCreate from './officeSub/OfficeCreate'
+import OfficeCard from './officeSub/OfficeCard'
+import OfficeEdit from './officeSub/OfficeEdit'
 import Auth from '../auth/Auth'
+import Header from '../Header'
+import Footer from '../Footer'
 
 
 const OfficeIndex = (props) => {
-    // const [sessionToken, setSessionToken] = useState('')
+    // console.log(`Props from Office Index==> ${props}`)
 
-    const [offices, setOffices] = useState([])
+    const [offices, setOffices] = useState([]);
     const [updateOffice, setUpdateOffice] = useState(false);
     const [officeToUpdate, setOfficeToUpdate]= useState({})
 
     const fetchOffices = () => {
-        fetch('http://localhost:3000/office', {
+        fetch('http://localhost:3000/office/getall', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
-        }).then( (res) => res.json())
+        }).then( (res) => {
+            // console.log(`TOKEN IN OFFICE INDEX ${props.token}`)
+            return res.json()})
         .then((officeData) => {
             setOffices(officeData)
             console.log(officeData)
@@ -31,28 +34,25 @@ const OfficeIndex = (props) => {
         fetchOffices()
     }, [])
 
-    // useEffect(() => {
-    //     if(localStorage.getItem('token')){
-    //         setSessionToken(localStorage.getItem('token'))
-    //     }
-    // }, [])
+    const editUpdateOffice = (office) =>{
+        setOfficeToUpdate(office);
+        console.log(office)
+    }                               
 
+    const updateOn=() => {
+        setUpdateOffice(true);
+    }
+
+    const updateOff=() => {
+        setUpdateOffice(false)
+    }
 
     return(
         <React.Fragment>
-            <Card>
-            <h1> THIS WILL DISPLAY A USER'S OFFICES. </h1>
-                <CardTitle>
-                    
-                </CardTitle>
-
-            </Card>
-            
-        
-        {/* <OfficeCard clickLogout ={props.clearToken} /> */}
-        {/* <Button onClick={props.clickLogout}>Logout</Button> */}
+        <OfficeCard offices = {offices}  fetchOffices= {fetchOffices} token={props.token} officeToUpdate={officeToUpdate} editUpdateOffice={editUpdateOffice} updateOn={updateOn} updateOff={updateOff} updateOffice={updateOffice} setUpdateOffice={setUpdateOffice}
+        clickLogout ={props.clearToken} />
+        <Footer />
         </React.Fragment>
-
     )
 }
 
