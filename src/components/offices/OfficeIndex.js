@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import OfficeCreate from './officeSub/OfficeCreate'
 import OfficeCard from './officeSub/OfficeCard'
-import OfficeEdit from './officeSub/OfficeEdit'
-import Auth from '../auth/Auth'
-import Header from '../Header'
 import Footer from '../Footer'
 import APIURL from '../../helpers/environment';
 

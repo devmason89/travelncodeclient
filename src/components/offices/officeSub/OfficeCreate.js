@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {
   Card, CardText, CardTitle, CardBody,
-   Button, Carousel,
-   Container,
+   Button, 
    Label, Input
 } from 'reactstrap';
 import APIURL from '../../../helpers/environment';

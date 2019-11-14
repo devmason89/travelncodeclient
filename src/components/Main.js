@@ -3,8 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import {BrowserRouter as Router, Switch} from 'react-router-dom'; 
 import OfficeIndex from './offices/OfficeIndex';
-import Auth from './auth/Auth';
-import MainOffice from './MainOffice'
 
 const Main = () => {
     const [sessionToken, setSessionToken] = useState('')

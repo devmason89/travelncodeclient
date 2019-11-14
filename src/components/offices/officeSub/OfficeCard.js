@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {
-  Card, CardText, CardDeck, CardBody,CardTitle, 
-Container, Row, Col, Button} from 'reactstrap';
+  Card, CardText, CardDeck, CardTitle, 
+  Button} from 'reactstrap';
 import styled from 'styled-components';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
@@ -9,12 +9,12 @@ import OfficeCreate from '../officeSub/OfficeCreate'
 import APIURL from '../../../helpers/environment';
 
 
-const Resize = styled.img`
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 0 20px 0 auto;
-`      
+// const Resize = styled.img`
+//     width: auto;
+//     height: auto;
+//     display: block;
+//     margin: 0 20px 0 auto;
+// `      
 
 const OfficeCard = (props) => {
     const [isCreateShown, setCreateShown] = useState(false);

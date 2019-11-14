@@ -41,7 +41,7 @@ const Header = (props) => {
                 <Route exact path ="/auth"><Auth /></Route>
                 <Route exact path ="/mainoffice"><MainOffice /></Route>
             </Switch>
-              {/* {protectionOn()}   */}
+              {protectionOn()}  
             <Footer/>
         </div>   
      )
