@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Button,Input} from 'reactstrap'
+import APIURL from '../../../helpers/environment';
 
 const OfficeEdit = (props) => {
 
@@ -15,7 +16,7 @@ const OfficeEdit = (props) => {
         console.log('officeUpdate');
         // console.log('props.officeToUpdate.id', props.officeToUpdate.id)
         event.preventDefault();
-        fetch(`http://localhost:3000/office/${props.officeToUpdate.id}`, {
+        fetch(`${APIURL}/office/${props.officeToUpdate.id}`, {
             method:'PUT',
             body: JSON.stringify({office: {name: editName, type: editType, freeWifi: editFreeWifi, freeRestroom: editFreeRestroom, comments: editComments, rating: editRating}}),
 

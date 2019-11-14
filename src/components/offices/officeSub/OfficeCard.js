@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
 import OfficeCreate from '../officeSub/OfficeCreate'
+import APIURL from '../../../helpers/environment';
 
 
 const Resize = styled.img`
@@ -30,7 +31,7 @@ const OfficeCard = (props) => {
     console.log(props)
 
      const deleteOffice =(office)=> {
-         fetch(`http://localhost:3000/office/${office.id}`, 
+         fetch(`${APIURL}/office/${office.id}`, 
          {
              method: 'DELETE',
              headers: new Headers ({

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap'; //1
 import './Signup.css';
+import APIURL from '../../helpers/environment';
 
 const Signup= (props) => {
     const[username, setUsername] = useState('');  //2 created state variables which will be fed info from our input fields
@@ -10,7 +11,7 @@ const Signup= (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();               //prevents from refreshing page when we submit the form
-        fetch('http://localhost:3000/signup', {   //1 sending fetch request to the endpoint determined in our server. 
+        fetch(`${APIURL}/signup`, {   //1 sending fetch request to the endpoint determined in our server. 
         method: 'POST',  //2
         body: JSON.stringify({user: {username:username, password: password}}),  //3 works with req.body.user.username
         headers: new Headers ({

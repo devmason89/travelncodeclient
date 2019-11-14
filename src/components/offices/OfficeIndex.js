@@ -5,6 +5,7 @@ import OfficeEdit from './officeSub/OfficeEdit'
 import Auth from '../auth/Auth'
 import Header from '../Header'
 import Footer from '../Footer'
+import APIURL from '../../helpers/environment';
 
 
 const OfficeIndex = (props) => {
@@ -15,7 +16,7 @@ const OfficeIndex = (props) => {
     const [officeToUpdate, setOfficeToUpdate]= useState({})
 
     const fetchOffices = () => {
-        fetch('http://localhost:3000/office/getall', {
+        fetch(`${APIURL}/office/getall`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

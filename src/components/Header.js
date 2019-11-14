@@ -4,6 +4,7 @@ import './Header.css';
 import Footer from './Footer'
 import Auth from './auth/Auth'
 import MainOffice from './MainOffice'
+import OfficeIndex from './offices/OfficeIndex'
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 
 

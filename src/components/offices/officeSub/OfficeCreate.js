@@ -5,6 +5,7 @@ import {
    Container,
    Label, Input
 } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const OfficeCreate = (props) => {
 
@@ -18,7 +19,7 @@ const OfficeCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault(e);
-        fetch('http://localhost:3000/office', {
+        fetch(`${APIURL}/office`, {
             method: 'POST',
             body: JSON.stringify({office: {name: name, type: type, freeWifi: freeWifi, freeRestroom: freeRestroom, comments: comments, rating: rating}}),
             headers: new Headers ({
