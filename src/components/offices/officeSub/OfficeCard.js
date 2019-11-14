@@ -48,7 +48,7 @@ const OfficeCard = (props) => {
          return props.offices.map((office, index) => {
              return(
                  <Card key={index} id="cardMapper">
-                     <CardTitle>
+                     <CardTitle id="cardTitle">
                          {office.name}
                      </CardTitle>
                      <CardText> Type:&nbsp;
@@ -60,7 +60,7 @@ const OfficeCard = (props) => {
                     <CardText>Rating:&nbsp; {office.rating}</CardText>
                     <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
                    />
-                        <Button onClick={() => {deleteOffice(office)}}>Delete</Button>
+                        <Button id="deleteButton" size="sm" block onClick={() => {deleteOffice(office)}}>Delete</Button>
                  </Card>
              )
          })
@@ -72,17 +72,22 @@ const OfficeCard = (props) => {
     }
 
     return (
+        <div>
+        <h1 id="pastOffices">MY PAST OFFICES
+        <img src={Plus}  onClick={handleCreate} />
+        {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
+        </h1>
         <div id="allCards">
             <CardDeck id="groupCards"> 
                 <Card id="myCard">
-                    <CardTitle>MY PAST OFFICES
+                    {/* <h1 id="pastOffices">MY PAST OFFICES
                             <img src={Plus}  onClick={handleCreate} />
                             {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
-                            {/* <OfficeCreate fetchOffices={props.fetchOffices}/> */}
-                    </CardTitle>
+                    </h1> */}
                     {officeMapper(props)} 
                 </Card>
             </CardDeck>
+        </div>
         </div>
     )
 }

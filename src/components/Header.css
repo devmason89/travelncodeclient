@@ -11,6 +11,8 @@
     display:flex;
     align-content:space-between;
     order:1;
+    background-color:#504b5d;
+    font-weight:bold;
     
 }
 

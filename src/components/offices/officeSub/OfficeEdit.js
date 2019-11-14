@@ -32,7 +32,7 @@ const OfficeEdit = (props) => {
     }
 
     return(
-        <Button onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
+        <Button size="sm" id="updateButton" block onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
         <Modal id = "updateModal"isOpen={props.updateOffice}>
             <ModalHeader>Edit a Past Office</ModalHeader>
             <Button id= "modalButton" onClick={ () => {props.updateOff()}} close />
@@ -62,7 +62,7 @@ const OfficeEdit = (props) => {
                             <Label htmlFor="Rating">Edit Rating:</Label>
                             <Input name="Rating" value={editRating} onChange={(e)=> setEditRating(e.target.value)}/>
                         </FormGroup>
-                        <Button type="submit">Update my office.</Button>
+                        <Button id="updateButton" type="submit">Update my office.</Button>
                     </Form>
                 </ModalBody>
         </Modal>

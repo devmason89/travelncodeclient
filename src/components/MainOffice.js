@@ -7,14 +7,19 @@ import {
 import Mission from './Mission'
 import OfficeIndex from './offices/OfficeIndex';
 
-const MainOffices = () => {
+
+const MainOffices = () => { 
     return(
+        <div className="placeholderText">
+             <h1>"This is your main office page!"</h1>
+        
 
 <div className="mainRouting">
             <Switch>
                 <Route exact path="/mission"><Mission /></Route>   
                 <Route exact path="/officeindex"><OfficeIndex /></Route>
             </Switch>
+</div>
 </div>
 )
 }
