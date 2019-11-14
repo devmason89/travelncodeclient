@@ -3,17 +3,6 @@ import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Button,Input} fr
 
 const OfficeEdit = (props) => {
 
-    const [closeModal, setCloseModal]= useState('false')
-    
-    const toggleModal = () => {
-        setCloseModal(!closeModal)
-    }
-    // console.log(props)
-
-    // const req = {
-    //     props.office.params
-    // }
-
     const [editName, setEditName] = useState(props.officeToUpdate.name);
     const [editType, setEditType] = useState(props.officeToUpdate.type);
     const [editFreeWifi, setEditFreeWifi] = useState(props.officeToUpdate.freeWifi);
@@ -45,7 +34,7 @@ const OfficeEdit = (props) => {
         <Button onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
         <Modal id = "updateModal"isOpen={props.updateOffice}>
             <ModalHeader>Edit a Past Office</ModalHeader>
-            <Button id= "modalButton" onClick={toggleModal} close />
+            <Button id= "modalButton" onClick={ () => {props.updateOff()}} close />
                 <ModalBody>
                     <Form onSubmit = {officeUpdate} body={props.office.body}>
                         <FormGroup>

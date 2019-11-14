@@ -7,6 +7,8 @@ import {
 } from 'reactstrap';
 
 const OfficeCreate = (props) => {
+
+
     const [name, setName] = useState('');
     const [type, setType] = useState('');
     const [freeWifi, setFreeWifi] = useState('')
@@ -33,6 +35,7 @@ const OfficeCreate = (props) => {
             setComments('');
             setRating('');
             props.fetchOffices();
+            props.closeCreate();
         })
     }
 
@@ -40,6 +43,7 @@ return (
             <Card>
                 <CardTitle>
                 <h1> Create a New Office </h1>
+                {/* <Button onClick={ () => {props.closeCreate()}} close /> */}
                 </CardTitle>
                 <CardBody>
                     <CardText>
@@ -48,7 +52,7 @@ return (
                         </Input>
 
                         <Label htmlFor="type"> Type of Establishment </Label>
-                        <Input name="type" value={type} onChange={(e)=> setType(e.target.value)}>
+                        <Input type="select" name="type" value={type} onChange={(e)=> setType(e.target.value)}>
                             <option value="Cafe">Cafe</option>
                             <option value="Library">Library</option>
                             <option value="Coworking Space">Coworking Space</option>
@@ -56,11 +60,11 @@ return (
                             <option value="Other">Other - please define in comment section.</option>
                             </Input>
 
-                            <Label htmlFor="freeWifi"> Free Wifi </Label>
+                            <Label htmlFor="freeWifi"> Free Wifi (True or False) </Label>
                             <Input name="freeWifi" value={freeWifi} onChange={(e)=> setFreeWifi(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="freeRestroom"> Free Restroom</Label>
+                            <Label htmlFor="freeRestroom"> Free Restroom (True or False)</Label>
                             <Input name="freeRestroom" value={freeRestroom} onChange={(e)=> setFreeRestroom(e.target.value)}>
                             </Input>
 
@@ -68,7 +72,7 @@ return (
                             <Input name="comments" value={comments} onChange={(e)=> setComments(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="rating"> Rating </Label>
+                            <Label htmlFor="rating"> Rating (1 is Poor, 5 is Great)</Label>
                             <Input name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
                             </Input>
                             <Button type="submit" onClick={(e) => handleSubmit(e)}>Create Office.</Button>
@@ -79,3 +83,8 @@ return (
 }
 
 export default OfficeCreate;
+
+
+
+
+

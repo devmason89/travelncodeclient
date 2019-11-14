@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse, Button,NavLink, Jumbotron} from "reactstrap";
+import { Navbar, Button} from "reactstrap";
 import './Header.css';
 import Footer from './Footer'
-import OfficeIndex from './offices/OfficeIndex'
 import Auth from './auth/Auth'
-import Mission from './Mission'
+import MainOffice from './MainOffice'
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 
 
@@ -16,36 +15,35 @@ const Header = (props) => {
         )
     }
 
+    // const protectionOn = () => {
+    //     return(props.sessionToken === localStorage.getItem('token') ? <MainOffice token = {props.sessionToken} setSessionToken={props.setSessionToken}/> : <Auth updateToken={props.updateToken}/>
+    //     )
+    // }
+
     return (
         <div>
-          
             <Navbar className = "header">
                 <h1 className="name">Travel N Code</h1>
                 <Button id="btn" onClick = {props.clickLogout}>Logout</Button>
                 <p id="slogan">"Find your perfect office-- no matter where you are."</p>  
            
-            <div className="sidebar">
-                    <div className = "sidebar-list-styling">
-                        <ul className = "sidebar-list list-unstyled">
-                            <Link to="/mission">
-                                <li>Mission</li></Link>
+                <div className="routing">
+                    <div className = "routing-list-styling">
+                        <ul className = "routing-list list-unstyled">
+                        <li><Link to="/auth">Auth</Link></li>
+                        <li><Link to="/mainoffice">Main Office</Link></li>
                         </ul>
                     </div>
-
-                <div className="sidebar-route">
-                    <Switch>
-                        <Route exact path="/mission" exact component={Mission}/>
-                    </Switch>
                 </div>
-            </div>
-
             </Navbar>
-        
-              {protectionOn()}  
+            <Switch>
+                <Route exact path ="/auth"><Auth /></Route>
+                <Route exact path ="/mainoffice"><MainOffice /></Route>
+            </Switch>
+              {/* {protectionOn()}   */}
             <Footer/>
-        </div>
-            
-        )
+        </div>   
+     )
 };
 
 export default Header;

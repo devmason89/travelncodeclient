@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {
-  Card, CardText, CardBody,CardTitle, 
-Container, Row, Button} from 'reactstrap';
+  Card, CardText, CardDeck, CardBody,CardTitle, 
+Container, Row, Col, Button} from 'reactstrap';
 import styled from 'styled-components';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
@@ -23,6 +23,10 @@ const OfficeCard = (props) => {
         setCreateShown(true)  //changing state here
     }
 
+    const closeCreate = () =>{
+        setCreateShown(false)
+    }
+
     console.log(props)
 
      const deleteOffice =(office)=> {
@@ -42,7 +46,7 @@ const OfficeCard = (props) => {
         {
          return props.offices.map((office, index) => {
              return(
-                 <Card key={index}>
+                 <Card key={index} id="cardMapper">
                      <CardTitle>
                          {office.name}
                      </CardTitle>
@@ -66,25 +70,19 @@ const OfficeCard = (props) => {
      }
     }
 
-    
     return (
-        <Container>
-            <Row>
-                <Card>
+        <div id="allCards">
+            <CardDeck id="groupCards"> 
+                <Card id="myCard">
                     <CardTitle>MY PAST OFFICES
                             <img src={Plus}  onClick={handleCreate} />
-                            {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} token={props.token}/>}
+                            {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
                             {/* <OfficeCreate fetchOffices={props.fetchOffices}/> */}
                     </CardTitle>
-                    <CardBody>
-                    <CardText>
-                    {officeMapper(props)}
-                    </CardText>
-                    </CardBody>
+                    {officeMapper(props)} 
                 </Card>
-                </Row>
-        </Container>
-
+            </CardDeck>
+        </div>
     )
 }
 
