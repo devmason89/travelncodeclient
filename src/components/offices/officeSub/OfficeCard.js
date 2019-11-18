@@ -114,7 +114,7 @@ const OfficeCard = (props) => {
             {/* <div className="plusBundle">
             <img id="plus" src={Plus}  onClick={handleCreate} /> */}
             <div id="plusBundle">
-            <img id="plus" src={Plus}  onClick={handleCreate()} />
+            <img id="plus" src={Plus}  onClick={handleCreate} />
             <h6 id="createId">Create Office </h6>
         {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
         </div>
