@@ -1,15 +1,32 @@
 #deleteButton {
     position:relative;
-    margin: 5px;
-    display: block;
-  max-width: 70px;
-  margin: auto;
-
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    right:0px;
 }
 
-#db {
-    /* display: block;
-  max-width: 300px;
-  margin: auto; */
 
+#buttonRow{
+    display:flex;
+    /* flex-direction:space-around; */
+    margin:auto;
+    flex-wrap:nowrap;
+    position:relative;
+    justify-content:center; 
+    bottom:10px;
+    right:0px;
+}
+
+.cardTextMapper{
+    display: flex;
+    flex-direction: row;
+    /* justify-content:center; */
+}
+
+#mainCard{
+    display:flex;
+    justify-content:center; 
+    align-items:center;
+    
 }

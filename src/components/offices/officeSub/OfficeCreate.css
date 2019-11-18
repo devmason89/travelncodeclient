@@ -5,3 +5,41 @@
     font-family:Lobster, cursive;
     font-size:110%;
 }
+
+
+#createHeader{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+    background-color: #60545f;
+    color:white;
+    
+}
+#closeCreateButton {
+    color: white;
+    display:flex;
+    justify-content:flex-end;
+    wrap:nowrap;
+    margin:right;
+
+}
+
+#modalCreate{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+}
+
+#createCardBody{
+    background-color: #60545f;
+}
+
+#createInput{
+    background-color:#FEDDAA;
+}
+
+#createLabels{
+    color:white;
+}

@@ -76,23 +76,26 @@ const OfficeCard = (props) => {
         {
          return props.offices.map((office, index) => {
              return(
+                 <div id="mainCard">
                  <Card key={index} id="cardMapper">
                      <CardTitle id="cardTitle">
                          {office.name}
                      </CardTitle>
-                     <CardText> Type:&nbsp;
+                     <CardText className="cardTextMapper"> Type:&nbsp;
                          {office.type}
                      </CardText>
-                     <CardText>Free Wifi: &nbsp; {String(office.freeWifi)[0].toUpperCase()+ String(office.freeWifi).slice(1)} </CardText>
-                    <CardText>Free Restroom: &nbsp; {String(office.freeRestroom)[0].toUpperCase()+String(office.freeRestroom).slice(1)}</CardText>
-                    <CardText>Comments: &nbsp; {office.comments}</CardText>
-                    <CardText>Rating:&nbsp; {office.rating}</CardText>
+                     <CardText className="cardTextMapper">Free Wifi: &nbsp; {String(office.freeWifi)[0].toUpperCase()+ String(office.freeWifi).slice(1)} </CardText>
+                    <CardText className="cardTextMapper" >Free Restroom: &nbsp; {String(office.freeRestroom)[0].toUpperCase()+String(office.freeRestroom).slice(1)}</CardText>
+                    <CardText className="cardTextMapper">Comments: &nbsp; {office.comments}</CardText>
+                    <CardText className="cardTextMapper">Rating:&nbsp; {office.rating}</CardText>
+    
+                    <div id="buttonRow">
                     <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
                     clickLogout= {props.clickLogout}
                    />
-                   <div className="db">
                         <Button id="deleteButton" block size= "sm" onClick={() => {deleteOffice(office)}}>Delete</Button>
                         </div>
+                        
                  {/* {<Button id="deleteB" onClick= {()=>{ <OfficeDelete office={office} fetchOffices={props.fetchOffices} token={props.token}>Delete 
                  </Button>} */}
                  {/* <Button>
@@ -100,6 +103,7 @@ const OfficeCard = (props) => {
                  <OfficeDelete office={office} fetchOffices={props.fetchOffices} token={props.token}/> : <> </> }
                  </Button> */}
                   </Card>
+                  </div>
              )
          })
      } else { 

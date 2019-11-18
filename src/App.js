@@ -40,7 +40,7 @@ const App = () => {
             className = "header">
                 <h1 className="name">Travel N Code</h1>
                 <div className="topline">
-                <Button id="btn"  onClick = {clearToken}>Logout</Button>
+                <Button id="logoutButton"  onClick = {clearToken}>Logout</Button>
                 <p id="slogan">"Find your perfect office-- no matter where you are."</p> 
                 </div>
       {protectionOn()} 

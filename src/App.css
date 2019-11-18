@@ -151,13 +151,9 @@ margin-bottom: auto;
     background-color:#b45a22;
     font-family: 'Lobster', cursive;
     font-size: 110%;
+    position:relative;
     display:flex;
-    flex-direction:row;
     justify-content:center;
-    align-self: flex-end;
-    margin-top: auto;
-    /* flex:1; */
-    /* position:absolute; */
   }
 
   #pastOffices {
@@ -190,25 +186,34 @@ margin-bottom: auto;
     }
 
     #plusBundle {
+      /* display:flex;
+      flex-direction: flex-start; */
+      /* display:flex;
+      justify-content:left;
+      flex-direction:row;
+      position: relative; */
+
+    }
+
+    #plus {
+      /* position:absolute; */
       display:flex;
       justify-content:left;
       flex-direction:row;
       position: relative;
-
+      top:20px;
+      
     }
+
 
     #createId{
       color:#60545f;
       font-size:90%;
       font-style: italic;
-      display:flex;
-      justify-content:row;
       margin-left: 30px;
+      margin-bottom:-30px;
+      
     
-    }
-
-    #plus {
-      position:absolute;
     }
 
     #createHeader {
@@ -265,8 +270,11 @@ margin-bottom: auto;
     }
 
     #createColor{
-      /* opacity:80%; */
-      border: 3px solid black; 
+      /* border: 2px solid black;  */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    
     }
 
     #updateModal {
