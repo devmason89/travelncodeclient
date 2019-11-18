@@ -265,8 +265,8 @@ margin-bottom: auto;
     }
 
     #createColor{
-      /* opacity:80%; */
-      border: 5px solid red; 
+      opacity:80%;
+      /* border: 5px solid red;  */
     }
 
     #updateModal {
