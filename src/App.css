@@ -313,11 +313,11 @@ margin-bottom: auto;
   justify-content:center; */
 }
 
-.missionText {
-  padding:10px;
-  background-color:white;
-  opacity:70%;
-  color:black;
+#missionText {
+  padding: 10px;
+  background-color: white;
+  /* opacity:70%; */
+  color: black;
 }
 
 #createBtn {
