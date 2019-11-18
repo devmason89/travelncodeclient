@@ -265,7 +265,7 @@ margin-bottom: auto;
     }
 
     #createColor{
-      opacity:80%;
+      /* opacity:80%; */
       border: 3px solid black; 
     }
 

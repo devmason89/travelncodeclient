@@ -40,7 +40,6 @@ const OfficeCard = (props) => {
    const handleCreate = (e) => {
         e.preventDefault();
         setCreateShown(true)  //changing state here
-        console.log('hit endpoint')
     }
 
     const closeCreate = () =>{
