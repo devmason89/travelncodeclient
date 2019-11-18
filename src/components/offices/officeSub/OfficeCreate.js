@@ -41,7 +41,7 @@ const OfficeCreate = (props) => {
     }
 
 return (
-            <Card id="createcolor">
+            <Card id="createColor">
                 <CardTitle>
                 <h1 id="createHeader"> Create a New Office </h1>
                 <Button onClick={ () => {props.closeCreate()}} close />
