@@ -11,6 +11,16 @@ input {
     font-family: 'Lato', sans-serif;
 }
 
-.button {
-    background-color:#b45a22;
+#signupButton {
+    background-color:#b45a22; 
+     position:relative;
+     margin: auto;
+     left:3px;
+     margin-top:15px;
+     /* right: -50px; */
 }
+
+#creds {
+    font-family: Lato;
+}
+

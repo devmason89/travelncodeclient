@@ -6,16 +6,16 @@ import Auth from './auth/Auth'
 import MainOffice from './MainOffice'
 import Mission from './Mission';
 import OfficeIndex from './offices/OfficeIndex'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link, Route} from 'react-router-dom';
 
 
 const Header = (props) => {
     const [isLoggedIn, setIsLoggedIn]= useState(false)
      
-    const protectionOn = () => {
-        return(props.sessionToken === localStorage.getItem('token') ? <OfficeIndex token = {props.sessionToken} setSessionToken={props.setSessionToken}/> : <Auth updateToken={props.updateToken}/>
-        )
-    }
+    // const protectionOn = () => {
+    //     return(props.sessionToken === localStorage.getItem('token') ? <OfficeIndex token = {props.sessionToken} clickLogout ={props.clearToken} setSessionToken={props.setSessionToken}/> : <Auth updateToken={props.updateToken}/>
+    //     )
+    // }
 
     // const protectionOn = () => {
     //     return(props.sessionToken === localStorage.getItem('token') ? <MainOffice token = {props.sessionToken} setSessionToken={props.setSessionToken}/> : <Auth updateToken={props.updateToken}/>
@@ -23,29 +23,35 @@ const Header = (props) => {
     // }
 
     return (
-        <div>
-            <Navbar className = "header">
-                <h1 className="name">Travel N Code</h1>
-                <Button id="btn"  onClick = {props.clickLogout}>Logout</Button>
-                <p id="slogan">"Find your perfect office-- no matter where you are."</p>  
+        <div className="header">
+            {/* <Navbar> */}
+                {/* // className = "header">
+                //  <h1 className="name">Travel N Code</h1>
+                // <Button id="btn"  onClick = {props.clickLogout}>Logout</Button>
+                // <p id="slogan">"Find your perfect office-- no matter where you are."</p>   */}
            
                 <div className="routing">
                     <div className = "routing-list-styling">
-                        <ul className = "routing-list list-unstyled">
-                        <li><Link to="/mainoffice">Main Office</Link></li>
-                        <li><Link to="/mission">Mission</Link></li>
-                        </ul>
+                        {/* <ul className = "routing-list list-unstyled"> */}
+                        <Link to="/officeindex">Office Index </Link>
+                        &nbsp;
+                        &nbsp;
+                        <Link to="/mission">Mission</Link>
+                        {/* </ul> */}
                     </div>
                 </div>
-            </Navbar>
-            <Switch>
-                 <Route exact path ="/mainoffice"><MainOffice /></Route>
-                 <Route exact path ="/mission"><Mission /></Route>
+            {/* </Navbar>  */}
+
+             <Switch>
+                 <Route exact path ="/officeindex"><OfficeIndex clickLogout ={props.clickLogout} updateToken={props.updateToken} token={props.token} setSessionToken={props.setSessionToken} /></Route>
+                 <Route exact path ="/mission"><Mission clickLogout ={props.clickLogout} /></Route>
             </Switch> 
-              {protectionOn()}  
-            <Footer/>
-        </div>   
+              {/* {protectionOn()}   */}
+            <Footer/>  
+        
+        </div>
      )
+
 };
 
-export default Header; 
+export default Header;  

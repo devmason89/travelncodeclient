@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import {
   Card, CardText, CardDeck, CardTitle, 
-  Button} from 'reactstrap';
+  Button, Popover, PopoverHeader, PopoverBody} from 'reactstrap';
 import styled from 'styled-components';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
 import OfficeCreate from '../officeSub/OfficeCreate'
 import APIURL from '../../../helpers/environment';
+import OfficeDelete from './OfficeDelete';
+import './OfficeCard.css';
 
 
 // const Resize = styled.img`
@@ -18,6 +20,22 @@ import APIURL from '../../../helpers/environment';
 
 const OfficeCard = (props) => {
     const [isCreateShown, setCreateShown] = useState(false);
+    // const [popoverOpen, setPopoverOpen] = useState(false);
+
+    // const deleteToggleOn = () => {
+    //     popoverOpen(true)
+    // }
+
+    // const deleteToggleOff = () => {
+    //     popoverOpen(false)
+    // }
+
+    // const handleDelete = () => {
+    //     return(
+    //         <OfficeDelete office={office} fetchOffices={props.fetchOffices} token={props.token} />
+    //     )
+    // }
+
 
    const handleCreate = (e) => {
         e.preventDefault();
@@ -42,6 +60,17 @@ const OfficeCard = (props) => {
          .then(() => props.fetchOffices())
      }
 
+    //  const deletePopover = (office) => {
+    //      return(
+    //         <div>
+    //     <Popover placement="bottom" isOpen={popoverOpen} target="deletePopover" toggle={deleteToggle}>
+    //     <PopoverHeader>Confirm Deletion</PopoverHeader>
+    //     <PopoverBody>Are you sure you want to delete this office?</PopoverBody>
+    //   </Popover>
+    // </div>
+    //     )
+    //  }
+
      const officeMapper = () => {
          if(props.offices != (''))
         {
@@ -59,24 +88,35 @@ const OfficeCard = (props) => {
                     <CardText>Comments: &nbsp; {office.comments}</CardText>
                     <CardText>Rating:&nbsp; {office.rating}</CardText>
                     <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
+                    clickLogout= {props.clickLogout}
                    />
-                        <Button id="deleteButton" size="sm" block onClick={() => {deleteOffice(office)}}>Delete</Button>
-                 </Card>
+                   <div className="db">
+                        <Button id="deleteButton" block size= "sm" onClick={() => {deleteOffice(office)}}>Delete</Button>
+                        </div>
+                 {/* {<Button id="deleteB" onClick= {()=>{ <OfficeDelete office={office} fetchOffices={props.fetchOffices} token={props.token}>Delete 
+                 </Button>} */}
+                 {/* <Button>
+                 {popoverOpen ? 
+                 <OfficeDelete office={office} fetchOffices={props.fetchOffices} token={props.token}/> : <> </> }
+                 </Button> */}
+                  </Card>
              )
          })
      } else { 
          return(
-             <p>No Offices Created.</p>   
+             <p id="noOffices">No Offices Created.</p>   
          )
      }
     }
 
     return (
         <div>
-        <h1 id="pastOffices">MY PAST OFFICES
-        <img src={Plus}  onClick={handleCreate} />
+            <div className="plusBundle">
+            <img id="plus" src={Plus}  onClick={handleCreate} />
+            <h6 id="createId">Create Office </h6>
         {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
-        </h1>
+        </div>
+        <h1 id="pastOffices">My Past Offices </h1>
         <div id="allCards">
             <CardDeck id="groupCards"> 
                 <Card id="myCard">

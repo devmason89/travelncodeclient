@@ -1,0 +1,20 @@
+#updateButton {
+    position:relative;
+    margin: auto;
+
+}
+
+#editInput {
+    background-color: #FEDDAB;
+
+  }
+
+#editModalTitle {
+    background-color:#60545f;
+    color:white;
+}
+
+#modalButton{
+    float:right;
+    color: white;
+}

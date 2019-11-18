@@ -5,6 +5,7 @@ import {
    Label, Input
 } from 'reactstrap';
 import APIURL from '../../../helpers/environment';
+import './OfficeCreate.css'
 
 const OfficeCreate = (props) => {
 
@@ -40,18 +41,18 @@ const OfficeCreate = (props) => {
     }
 
 return (
-            <Card>
+            <Card id="createcolor">
                 <CardTitle>
-                <h1> Create a New Office </h1>
-                {/* <Button onClick={ () => {props.closeCreate()}} close /> */}
+                <h1 id="createHeader"> Create a New Office </h1>
+                <Button onClick={ () => {props.closeCreate()}} close />
                 </CardTitle>
                 <CardBody>
                     <CardText>
-                        <Label htmlFor="name"> Name </Label>
+                        <Label className="createLabels" htmlFor="name"> Name </Label>
                         <Input name="name" value={name} onChange={(e)=> setName(e.target.value)}>
                         </Input>
 
-                        <Label htmlFor="type"> Type of Establishment </Label>
+                        <Label className="createLabels"  htmlFor="type"> Type of Establishment </Label>
                         <Input type="select" name="type" value={type} onChange={(e)=> setType(e.target.value)}>
                             <option value="Cafe">Cafe</option>
                             <option value="Library">Library</option>
@@ -60,22 +61,22 @@ return (
                             <option value="Other">Other - please define in comment section.</option>
                             </Input>
 
-                            <Label htmlFor="freeWifi"> Free Wifi (True or False) </Label>
+                            <Label className="createLabels" htmlFor="freeWifi"> Free Wifi (True or False) </Label>
                             <Input name="freeWifi" value={freeWifi} onChange={(e)=> setFreeWifi(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="freeRestroom"> Free Restroom (True or False)</Label>
+                            <Label className="createLabels" htmlFor="freeRestroom"> Free Restroom (True or False)</Label>
                             <Input name="freeRestroom" value={freeRestroom} onChange={(e)=> setFreeRestroom(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="comments"> Comments </Label>
+                            <Label className="createLabels" htmlFor="comments"> Comments </Label>
                             <Input name="comments" value={comments} onChange={(e)=> setComments(e.target.value)}>
                             </Input>
 
-                            <Label htmlFor="rating"> Rating (1 is Poor, 5 is Great)</Label>
+                            <Label className="createLabels" htmlFor="rating"> Rating (1 is Poor, 5 is Great)</Label>
                             <Input name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
                             </Input>
-                            <Button type="submit" onClick={(e) => handleSubmit(e)}>Create Office.</Button>
+                            <Button type="submit" id="createBtn" onClick={(e) => handleSubmit(e)}>Create Office</Button>
                      </CardText>
                 </CardBody>
             </Card>

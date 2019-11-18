@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap'; //1
-import './Login.css';
 import APIURL from '../../helpers/environment';
+import './Login.css';
 //double check this file pathway is right
 
 const Login= (props) => {
@@ -36,13 +36,13 @@ const Login= (props) => {
             <Form onSubmit= {handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="username">Username</Label>
-                    <Input onChange= {(e) => setUsername(e.target.value)} name="username" value={username}/>  
+                    <Input id="creds" onChange= {(e) => setUsername(e.target.value)} name="username" value={username}/>  
                 </FormGroup>
-                <FormGroup>
+                <FormGroup id="formCenter">
                     <Label htmlFor="password">Password</Label>
                     <Input type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
                 </FormGroup>
-                <Button className="button" type="submit" >Login</Button>
+                    <Button id="loginButton" type="submit" >Login</Button>
             </Form>
         </div>
     )

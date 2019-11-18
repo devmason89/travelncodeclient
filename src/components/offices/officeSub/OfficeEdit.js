@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Button,Input} from 'reactstrap'
 import APIURL from '../../../helpers/environment';
+import './OfficeEdit.css';
 
 const OfficeEdit = (props) => {
 
@@ -32,37 +33,38 @@ const OfficeEdit = (props) => {
     }
 
     return(
-        <Button size="sm" id="updateButton" block onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
+        <Button size="sm" id="updateButton" onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
         <Modal id = "updateModal"isOpen={props.updateOffice}>
-            <ModalHeader>Edit a Past Office</ModalHeader>
-            <Button id= "modalButton" onClick={ () => {props.updateOff()}} close />
-                <ModalBody>
+            <ModalHeader id="editModalTitle">Edit a Past Office
+            <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> </ModalHeader>
+            {/* <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> */}
+                <ModalBody id="updateBody">
                     <Form onSubmit = {officeUpdate} body={props.office.body}>
                         <FormGroup>
-                            <Label htmlFor="name">Edit name:</Label>
-                            <Input name="name" value={editName} onChange={(e)=> setEditName(e.target.value)}/>
+                            <Label className="editLabel" htmlFor="name">Edit name:</Label>
+                            <Input id="editInput" name="name" value={editName} onChange={(e)=> setEditName(e.target.value)}/>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="type">Edit type:</Label>
-                            <Input name="name" value={editType} onChange={(e)=> setEditType(e.target.value)}/>
+                            <Label className="editLabel"  htmlFor="type">Edit type:</Label>
+                            <Input id="editInput"  name="name" value={editType} onChange={(e)=> setEditType(e.target.value)}/>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="Free Wifi">Edit Wifi:</Label>
-                            <Input name="Free Wifi" value={editFreeWifi} onChange={(e)=> setEditFreeWifi(e.target.value)}/>
+                            <Label className="editLabel" htmlFor="Free Wifi">Edit Wifi:</Label>
+                            <Input id="editInput"  name="Free Wifi" value={editFreeWifi} onChange={(e)=> setEditFreeWifi(e.target.value)}/>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="Free Restroom">Edit Free Restroom:</Label>
-                            <Input name="Free Restroom" value={editFreeRestroom} onChange={(e)=> setEditFreeRestroom(e.target.value)}/>
+                            <Label className="editLabel" htmlFor="Free Restroom">Edit Free Restroom:</Label>
+                            <Input id="editInput"  name="Free Restroom" value={editFreeRestroom} onChange={(e)=> setEditFreeRestroom(e.target.value)}/>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="Comments">Edit Comments:</Label>
-                            <Input name="Comments" value={editComments} onChange={(e)=> setEditComments(e.target.value)}/>
+                            <Label  className="editLabel" htmlFor="Comments">Edit Comments:</Label>
+                            <Input id="editInput"  name="Comments" value={editComments} onChange={(e)=> setEditComments(e.target.value)}/>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="Rating">Edit Rating:</Label>
-                            <Input name="Rating" value={editRating} onChange={(e)=> setEditRating(e.target.value)}/>
+                            <Label className="editLabel" htmlFor="Rating">Edit Rating:</Label>
+                            <Input id="editInput"  name="Rating" value={editRating} onChange={(e)=> setEditRating(e.target.value)}/>
                         </FormGroup>
-                        <Button id="updateButton" type="submit">Update my office.</Button>
+                        <Button id="updateButton" type="submit">Update My Office</Button>
                     </Form>
                 </ModalBody>
         </Modal>

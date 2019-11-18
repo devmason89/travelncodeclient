@@ -2,6 +2,14 @@
 
 .auth-container {
     font-family: 'Lobster', cursive;
+    /* diplay:flex;
+    justify-content:center; */
+}
+
+.login-col {
+    /* display:flex;
+    justify-content: center; */
+
 }
 
 #rowcenter {

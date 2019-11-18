@@ -5,11 +5,13 @@ import APIURL from '../../helpers/environment';
 
 
 const OfficeIndex = (props) => {
-    // console.log(`Props from Office Index==> ${props}`)
+    
 
     const [offices, setOffices] = useState([]);
     const [updateOffice, setUpdateOffice] = useState(false);
     const [officeToUpdate, setOfficeToUpdate]= useState({})
+    console.log(offices)
+    console.log(props)
 
     const fetchOffices = () => {
         fetch(`${APIURL}/office/getall`, {
@@ -46,8 +48,8 @@ const OfficeIndex = (props) => {
 
     return(
         <React.Fragment>
-        <OfficeCard offices = {offices}  fetchOffices= {fetchOffices} token={props.token} officeToUpdate={officeToUpdate} editUpdateOffice={editUpdateOffice} updateOn={updateOn} updateOff={updateOff} updateOffice={updateOffice} setUpdateOffice={setUpdateOffice}
-        clickLogout ={props.clearToken} />
+        <OfficeCard offices = {offices}  fetchOffices= {fetchOffices} token={props.token} officeToUpdate={officeToUpdate} editUpdateOffice={editUpdateOffice} updateOn={updateOn} updateOff={updateOff} updateOffice={updateOffice} setUpdateOffice={setUpdateOffice} updateToken={props.updateToken}
+        clickLogout ={props.clickLogout} />
         <Footer />
         </React.Fragment>
     )

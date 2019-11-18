@@ -33,6 +33,13 @@ footer{
 
 
 /*Header*/
+#slogan {
+  display:flex;
+  justify-content:space-around;
+  position:fixed;
+  right:100px;
+  top:5px;
+}
 
 
 /* .auth-container {
@@ -109,8 +116,8 @@ footer{
 #myCard {
 display: flex;
 flex-direction:row;
-flex: 1;
 background-color:#60545f;
+margin-bottom: auto; 
 
 
 }
@@ -121,6 +128,8 @@ background-color:#60545f;
   justify-content:center;
   
 }
+
+
 
 #cardText {
   display:flex;
@@ -144,6 +153,10 @@ background-color:#60545f;
   flex-direction:row;
   justify-content:center;
   border: 100%;
+  margin-top: auto;
+  /* flex:1; */
+  /* position:absolute; */
+  
   }
   
   #updateButton{
@@ -153,6 +166,11 @@ background-color:#60545f;
     display:flex;
     flex-direction:row;
     justify-content:center;
+    align-self: flex-end;
+    margin-top: auto;
+    /* flex:1; */
+    /* position:absolute; */
+
   }
 
   #pastOffices {
@@ -161,6 +179,156 @@ background-color:#60545f;
     display:flex;
     flex-direction:row;
     justify-content:center;
+    padding:10px;
   }
 
+  #img {
+    display:flex;
+    justify-content:flex-end;
+    flex-drection:row;
+  }
+
+  #deleteB{
+    background-color:#b45a22;
+    font-family: 'Lobster', cursive;
+    font-size: 110%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    border: 100%;
+    margin-top: auto;
+    /* flex:1; */
+    /* position:absolute; */
+    
+    }
+
+    #plusBundle {
+      display:flex;
+      justify-content:left;
+      flex-direction:row;
+      position: relative;
+
+    }
+
+    #createId{
+      color:#60545f;
+      font-size:90%;
+      font-style: italic;
+      display:flex;
+      justify-content:row;
+      margin-left: 30px;
+    
+    }
+
+    #plus {
+      position:absolute;
+    }
+
+    #createHeader {
+      color:#60545f;
+      font-size:200%;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      padding:10px;
+    }
+
+    .createLabels {
+      font-weight:bold;
+    }
+
+    
+    .routing{
+      border-bottom: 1px solid #625866;
+      /* border-top: 1px solid #625866; */
+    }
+
+    /**react-router-dom*/
+    .routing-list-styling{
+      text-decoration:none;
+      position: inline-block;
+      color:#625866;
+
+    }
+
+    Link {
+      color:#625866
+    }
+
+      a:link{
+        color:#625866;
+      }
+      a:visited{
+        color:#625866;
+      }
+      a:hover{
+        color:black;
+        text-decoration:none;
+      }
+
+    #noOffices{
+      color:white;
+      text-align:center;
+     
+    }
+
+    #myCard{
+      border:none;
+      margin-top:8px;
+    }
+
+    #createcolor{
+      opacity:80%;
+    }
+
+    #updateModal {
+      background-color:#dcd6bd;
+    }
+
+    #editModalTitle {
+      color:#60545f;
+      font-size:500%;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+    }
+
+
+    #updateBody{
+      background-color:#60545f;
+    }
+
+    .editLabel{
+      color:white
+    }
+
+
+/*Mission */
+#missionTitle {
+  text-align: center;
+  color:#60545f;
+  font-size:200%;
+  /* display:flex;
+  flex-direction:row;
+  justify-content:center; */
+}
+
+.missionText {
+  padding:10px;
+  background-color:white;
+  opacity:70%;
+  color:black;
+}
+
+#createBtn {
+  margin-top: 300px;
+  margin-right: 500px;
+  display:flex;
+  justify-content:row;
+
+}
+
+
+     
+    
 
