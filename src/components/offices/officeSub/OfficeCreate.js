@@ -57,6 +57,7 @@ return (
 
                         <Label id="createLabels"  htmlFor="type"> Type of Establishment </Label>
                         <Input id="createInput" type="select" name="type" value={type} onChange={(e)=> setType(e.target.value)}>
+                            <option value="DEFAULT">Choose the type of office</option>
                             <option value="Cafe">Cafe</option>
                             <option value="Library">Library</option>
                             <option value="Coworking Space">Coworking Space</option>

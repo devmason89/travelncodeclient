@@ -35,7 +35,7 @@ const OfficeEdit = (props) => {
     return(
         <Button size="sm" id="updateButton" onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
         <Modal id = "updateModal"isOpen={props.updateOffice}>
-            <ModalHeader id="editModalTitle">Edit a Past Office
+            <ModalHeader id="editModalTitle">Edit the {props.officeToUpdate.name} Office 
             <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> </ModalHeader>
             {/* <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> */}
                 <ModalBody id="updateBody">
@@ -46,7 +46,14 @@ const OfficeEdit = (props) => {
                         </FormGroup>
                         <FormGroup>
                             <Label className="editLabel"  htmlFor="type">Edit type:</Label>
-                            <Input id="editInput"  name="name" value={editType} onChange={(e)=> setEditType(e.target.value)}/>
+                            <Input id="editInput"  type="select" name="type" value={editType} onChange={(e)=> setEditType(e.target.value)}>
+                            <option value="DEFAULT">Choose the type of office</option>
+                            <option value="Cafe">Cafe</option>
+                            <option value="Library">Library</option>
+                            <option value="Coworking Space">Coworking Space</option>
+                            <option value="Hotel/Hostel">Hotel/Hostel</option>
+                            <option value="Other">Other - please define in comment section.</option>
+                            </Input>
                         </FormGroup>
                         <FormGroup>
                             <Label className="editLabel" htmlFor="Free Wifi">Edit Wifi:</Label>
