@@ -42,12 +42,10 @@ const OfficeCreate = (props) => {
 
 return (
             <Modal isOpen="true" id="createColor">
-                 {/* <Button id="closeCreateButton" onClick={ () => {props.closeCreate()}} close /> */}
                 
                 <ModalHeader id="createHeader">
                 <h3 id="modalCreate"> Create a New Office  <Button id="closeCreateButton" onClick={ () => {props.closeCreate()}} close /></h3> 
-               
-                {/* <Button onClick={ () => {props.closeCreate()}} close /> */}
+              
                 </ModalHeader>
                 <CardBody id="createCardBody">
                     <CardText>

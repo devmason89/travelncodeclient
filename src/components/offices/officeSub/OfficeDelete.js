@@ -1,48 +1,56 @@
-// import React, {useState} from 'react';
-// import {
-//   Card, CardText, CardDeck, CardTitle, 
-//   Button, Popover, PopoverHeader, PopoverBody} from 'reactstrap';
-//   import APIURL from '../../../helpers/environment';
+import React, {useState} from 'react';
+import {
+  Card, CardText, CardDeck, CardTitle, 
+  Button, Popover, PopoverHeader, PopoverBody, Modal, ModalHeader, ModalBody} from 'reactstrap';
+  import APIURL from '../../../helpers/environment';
+  import './OfficeDelete.css';
 
 
-//   const OfficeDelete = (props) => {
-//     // const [popoverOpen, setPopoverOpen] = useState(false);
-//     const [isDeleteConfirmed, setConfirmedDelete]= useState(false)
+  const OfficeDelete = (props) => {
+      console.log(props);
+      console.log(props.office);
+      
+    const [popoverOpen, setPopoverOpen] = useState(false);
 
-//     const closeDeletePopover = (office) => {
-//         setConfirmedDelete(false)
-//     }
+    const toggle= index => {
+        setPopoverOpen(!popoverOpen);
+    }
 
-//     // const deleteToggle = (office) => popoverOpen
+    const closeDeletion = () => {
+        setPopoverOpen(false)
+    }
 
-//     const deleteOffice =(office)=> {
-//         console.log(office)
-//         fetch(`${APIURL}/office/${office.id}`, 
-//         {
-//             method: 'DELETE',
-//             headers: new Headers ({
-//                 'Content-Type': 'application/json',
-//                 'Authorization': props.token
-//             })
-//         })
-//         .then(() => props.fetchOffices())
-//     }
+    const deleteOffice = () => {
+        console.log(props.office.id)
+        fetch(`${APIURL}/office/${props.office.id}`, 
+        {
+            method: 'DELETE',
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            })
+        })
+        .then(() => props.fetchOffices())
+    }
     
-//     return (
-//         // <Button id="deleteB" size="sm" block onClick={(e)=>{deleteToggle(e)}}>Delete
-//         <Popover placement="bottom" isOpen={props.popoverOpen} target="deleteB">
-//         <PopoverHeader>Confirm Deletion of {props.office.id}</PopoverHeader>
-//         <PopoverBody>Are you sure you want to delete the "{props.office.name}" office?
-//             <Button id="deleteB" size="sm" block onClick={() => {deleteOffice(props.office)}}>Yes</Button>
-//             <Button id="deleteB" size="sm" block onClick={()=>{closeDeletePopover()}}>No</Button>
-//         </PopoverBody>
-//       </Popover>
-//     // </Button>
-//        )
-//   }
+    return (
+        <div>
+        <Button id="deleteB" size="sm" block onClick={(e)=>{toggle(e)}}>Delete
+         <Modal id="deleteModal" isOpen={popoverOpen} target="deleteB">
+      <div>
+         <ModalHeader id="popoverHeaderDelete">Confirm Deletion
+         <Button id="cancelDelete" onClick={ () => {closeDeletion()}}close /></ModalHeader>
+         <div id="deleteButtonRow">
+            <ModalBody id="deleteBody">Are you sure you want to delete the "{props.office.name}" office?
+                <Button id="yesD" size="sm" block onClick={() => {deleteOffice()}}>Yes</Button>
+                <Button id="noD" size="sm" block onClick={()=>{toggle()}}>No</Button>
+            </ModalBody>
+         </div>
+     </div>
+      </Modal>
+   </Button>
+    </div>
+    )
+  }
 
-//   export default OfficeDelete;
-
-
-  //told me to make a ternary like updateOn in the workoutlog
-  //updateOn was called in a button
+  export default OfficeDelete;

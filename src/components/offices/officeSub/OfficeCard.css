@@ -21,7 +21,6 @@
 .cardTextMapper{
     display: flex;
     flex-direction: row;
-    /* justify-content:center; */
 }
 
 #mainCard{
@@ -29,4 +28,11 @@
     justify-content:center; 
     align-items:center;
     
+}
+
+
+#popoverDeleteBody {
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }

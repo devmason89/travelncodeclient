@@ -5,6 +5,7 @@ import { Navbar, Button} from "reactstrap";
 import OfficeIndex from './components/offices/OfficeIndex'
 import Auth from './components/auth/Auth';
 import Header from './components/Header'
+import Footer from './components/Footer'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
@@ -35,7 +36,6 @@ const App = () => {
 }
 
   return (
-    // <React.Fragment>
        <div
             className = "header">
                 <h1 className="name">Travel N Code</h1>
@@ -44,6 +44,7 @@ const App = () => {
                 <p id="slogan">"Find your perfect office-- no matter where you are."</p> 
                 </div>
       {protectionOn()} 
+      <Footer />
     </div> 
    
   );

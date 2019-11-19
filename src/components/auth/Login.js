@@ -8,13 +8,6 @@ const Login= (props) => {
     const[username, setUsername] = useState('');  //2 created state variables which will be fed info from our input fields
     const [password, setPassword] = useState('')
 
-
-    // const passwordCheck = () => {
-    //     if(password.length < 5) {
-    //     alert("Your password must be 5 or more characters")
-    // }}
-    //how do I use 2 functions in one button?
-
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/login`, {

@@ -1,8 +1,8 @@
 #updateButton {
     position:relative;
+    display:flex;
+    justify-content:center;
     margin: auto;
-    right:0px;
-
 }
 
 #editInput {

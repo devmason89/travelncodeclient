@@ -1,0 +1,65 @@
+#popoverHeaderDelete{
+    background-color: #60545f;
+    color:white;
+    display:flex;
+    justify-content:center;
+}
+
+#cancelDelete {
+    float:right;
+    color: white;
+}
+
+#deleteModal {
+    background-color: #60545f;
+
+}
+
+#deleteBody {
+    background-color: #60545f;
+    color:white;
+    vertical-align:middle;
+}
+
+#deleteB{
+    background-color:#b45a22;
+    font-family: 'Lobster', cursive;
+    font-size: 110%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    border: 100%;
+    margin-top: auto;
+    margin-left:10px;
+    position:relative;
+
+    }
+
+    #yesD{
+        background-color:#b45a22;
+        font-family: 'Lobster', cursive;
+        font-size: 110%;
+        position:relative;
+        margin-left:150px;
+        width:15%;
+        display:inline-block;
+        vertical-align:bottom;
+    }
+
+    #noD{
+        background-color:#b45a22;
+        font-family: 'Lobster', cursive;
+        font-size: 110%;
+        position:relative;
+        margin-left:30px;
+        width:15%;
+        display:inline-block;
+    }
+
+    #deleteButtonRow {
+        display:flex;
+        justify-content:center;
+        flex-direction:row;
+        align-items:center;
+
+    }

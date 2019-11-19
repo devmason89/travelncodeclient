@@ -75,11 +75,6 @@ footer{
   padding: '00px';
 }
 
-.mainMission {
-  backgroundcolor:white;
-
-}
-
 /*Office Styling*/
 
 #cardTitle {
@@ -143,8 +138,6 @@ margin-bottom: auto;
   justify-content:center;
   border: 100%;
   margin-top: auto;
-  /* flex:1; */
-  /* position:absolute; */
   }
   
   #updateButton{
@@ -171,38 +164,13 @@ margin-bottom: auto;
     flex-drection:row;
   }
 
-  #deleteB{
-    background-color:#b45a22;
-    font-family: 'Lobster', cursive;
-    font-size: 110%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    border: 100%;
-    margin-top: auto;
-    /* flex:1; */
-    /* position:absolute; */
-    
-    }
-
-    #plusBundle {
-      /* display:flex;
-      flex-direction: flex-start; */
-      /* display:flex;
-      justify-content:left;
-      flex-direction:row;
-      position: relative; */
-
-    }
-
     #plus {
       /* position:absolute; */
       display:flex;
       justify-content:left;
       flex-direction:row;
       position: relative;
-      top:20px;
-      
+      top:20px; 
     }
 
 
@@ -212,8 +180,6 @@ margin-bottom: auto;
       font-style: italic;
       margin-left: 30px;
       margin-bottom:-30px;
-      
-    
     }
 
     #createHeader {
@@ -225,6 +191,7 @@ margin-bottom: auto;
       padding:10px;
     }
 
+
     .createLabels {
       font-weight:bold;
     }
@@ -232,7 +199,6 @@ margin-bottom: auto;
     
     .routing{
       border-bottom: 1px solid #625866;
-      /* border-top: 1px solid #625866; */
     }
 
     /**react-router-dom*/
@@ -270,11 +236,9 @@ margin-bottom: auto;
     }
 
     #createColor{
-      /* border: 2px solid black;  */
       display:flex;
       justify-content:center;
       align-items:center;
-    
     }
 
     #updateModal {
@@ -304,16 +268,6 @@ margin-bottom: auto;
   text-align: center;
   color:#60545f;
   font-size:200%;
-  /* display:flex;
-  flex-direction:row;
-  justify-content:center; */
-}
-
-#missionText {
-  padding: 10px;
-  background-color: white;
-  /* opacity:70%; */
-  color: black;
 }
 
 #createBtn {
@@ -321,7 +275,26 @@ margin-bottom: auto;
   margin-right: 500px;
   display:flex;
   justify-content:row;
+}
 
+/*Mission */
+#missionText {
+  padding: 10px;
+  background-color:#ede6e9;
+  color: black;
+}
+
+#missionMap {
+  background-color: #ede6e9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  align-self:center;
+  padding:10px;
+}
+
+.mainMission {
+  backgroundcolor:#ede6e9;
 }
 
 
