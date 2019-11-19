@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {
-  Card, CardText, CardDeck, CardTitle, Modal, ModalBody, ModalHeader,
-  Button, Popover, PopoverHeader, PopoverBody} from 'reactstrap';
-import styled from 'styled-components';
+  Card, CardText, CardDeck, CardTitle, Button} from 'reactstrap';
 import Plus from '../../assets/plus.png';
 import OfficeEdit from '../officeSub/OfficeEdit'
 import OfficeCreate from '../officeSub/OfficeCreate'

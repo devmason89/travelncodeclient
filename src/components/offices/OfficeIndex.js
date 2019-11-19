@@ -5,7 +5,6 @@ import APIURL from '../../helpers/environment';
 
 
 const OfficeIndex = (props) => {
-    
 
     const [offices, setOffices] = useState([]);
     const [updateOffice, setUpdateOffice] = useState(false);
@@ -50,7 +49,6 @@ const OfficeIndex = (props) => {
         <React.Fragment>
         <OfficeCard offices = {offices}  fetchOffices= {fetchOffices} token={props.token} officeToUpdate={officeToUpdate} editUpdateOffice={editUpdateOffice} updateOn={updateOn} updateOff={updateOff} updateOffice={updateOffice} setUpdateOffice={setUpdateOffice} updateToken={props.updateToken}
         clickLogout ={props.clickLogout} />
-        <Footer />
         </React.Fragment>
     )
 }

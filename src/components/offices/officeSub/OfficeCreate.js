@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {
   Card, CardText, CardTitle, CardBody,
-   Button, Modal, ModalHeader,
+   Button, Modal, ModalHeader, ModalBody,
    Label, Input
 } from 'reactstrap';
 import APIURL from '../../../helpers/environment';
@@ -47,7 +47,7 @@ return (
                 <h3 id="modalCreate"> Create a New Office  <Button id="closeCreateButton" onClick={ () => {props.closeCreate()}} close /></h3> 
               
                 </ModalHeader>
-                <CardBody id="createCardBody">
+                <ModalBody id="createCardBody">
                     <CardText>
                         <Label id="createLabels" htmlFor="name"> Name </Label>
                         <Input id="createInput" name="name" value={name} onChange={(e)=> setName(e.target.value)}>
@@ -80,7 +80,7 @@ return (
                             </Input>
                             <Button type="submit" id="createBtn" onClick={(e) => handleSubmit(e)}>Create Office</Button>
                      </CardText>
-                </CardBody>
+                </ModalBody>
             </Modal>
 )
 }

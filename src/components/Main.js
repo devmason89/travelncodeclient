@@ -1,11 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Header from './Header';
-import { Navbar, Button} from "reactstrap";
-import Footer from './Footer';
-import Auth from './auth/Auth';
-import MainOffice from './MainOffice'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'; 
-import OfficeIndex from './offices/OfficeIndex';
+import {BrowserRouter as Router} from 'react-router-dom'; 
 
 const Main = (props) => {
     return (
