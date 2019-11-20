@@ -51,6 +51,7 @@ const OfficeCard = (props) => {
                     <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
                     clickLogout= {props.clickLogout}
                    />
+                   {/* <Button id="updateButton" onClick={() => {props.officeToUpdate(office); props.updateOn()}}>Update</Button> */}
         
                     <OfficeDelete popoverOpen={popoverOpen} token={props.token} fetchOffices={props.fetchOffices} office={office} toggle={toggle} index={index}/>
                  

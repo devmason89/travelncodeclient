@@ -8,6 +8,14 @@ const Login= (props) => {
     const[username, setUsername] = useState('');  //2 created state variables which will be fed info from our input fields
     const [password, setPassword] = useState('')
 
+
+    // function checkPassword () => {
+    //     return(
+    //     let userType=$("#userTypedPassword").val();
+
+    //     )
+    // }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/login`, {
@@ -33,7 +41,7 @@ const Login= (props) => {
                 </FormGroup>
                 <FormGroup id="formCenter">
                     <Label htmlFor="password">Password</Label>
-                    <Input type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
+                    <Input id="userTypedPassword" type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
                 </FormGroup>
                     <Button id="loginButton" type="submit" >Login</Button>
             </Form>

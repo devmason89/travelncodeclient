@@ -13,9 +13,6 @@ const Header = (props) => {
         <div className="header">
                 <div className="routing">
                     <div className = "routing-list-styling">
-                    {/* <Link to="/">Home</Link> 
-                         &nbsp;
-                        &nbsp; */}
                         <Link to="/">Office Index </Link>
                         &nbsp;
                         &nbsp;
@@ -24,7 +21,6 @@ const Header = (props) => {
                 </div>
 
              <Switch>
-                 {/* <Route exact path="/"><Main clickLogout= {props.clickLogout} /></Route> */}
                  <Route exact path ="/"><OfficeIndex clickLogout ={props.clickLogout} updateToken={props.updateToken} token={props.token} setSessionToken={props.setSessionToken} /></Route>
                  <Route exact path ="/mission"><Mission clickLogout ={props.clickLogout} /></Route>
             </Switch>  

@@ -11,11 +11,11 @@ const OfficeEdit = (props) => {
     const [editFreeRestroom, setEditFreeRestroom] = useState(props.officeToUpdate.freeRestroom);
     const [editComments, setEditComments] = useState(props.officeToUpdate.comments);
     const [editRating, setEditRating] = useState(props.officeToUpdate.rating);
+    console.log(editName)
 
     const officeUpdate = (event, office) => {
         console.log('props', props)
-        console.log('officeUpdate');
-        // console.log('props.officeToUpdate.id', props.officeToUpdate.id)
+     
         event.preventDefault();
         fetch(`${APIURL}/office/${props.officeToUpdate.id}`, {
             method:'PUT',
@@ -33,6 +33,7 @@ const OfficeEdit = (props) => {
     }
 
     return(
+        <div>
         <Button size="sm" id="updateButton" onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
         <Modal id = "updateModal"isOpen={props.updateOffice}>
             
@@ -40,7 +41,7 @@ const OfficeEdit = (props) => {
             <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> </ModalHeader>
 
                 <ModalBody id="updateBody">
-                    <Form onSubmit = {officeUpdate} body={props.office.body}>
+                    <Form onSubmit = {officeUpdate}>
                         <FormGroup>
                             <Label className="editLabel" htmlFor="name">Edit name:</Label>
                             <Input id="editInput" name="name" value={editName} onChange={(e)=> setEditName(e.target.value)}/>
@@ -76,7 +77,8 @@ const OfficeEdit = (props) => {
                     </Form>
                 </ModalBody>
         </Modal>
-    </Button>
+        </Button>
+    </div>
     )
 }
 

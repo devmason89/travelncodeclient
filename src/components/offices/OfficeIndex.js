@@ -9,7 +9,6 @@ const OfficeIndex = (props) => {
     const [offices, setOffices] = useState([]);
     const [updateOffice, setUpdateOffice] = useState(false);
     const [officeToUpdate, setOfficeToUpdate]= useState({})
-    console.log(offices)
     console.log(props)
 
     const fetchOffices = () => {
