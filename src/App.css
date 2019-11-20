@@ -6,6 +6,12 @@ Main {
 }
 
 
+#logoutButton{
+  background-color:#b45a22;
+  font-family:Lobster;
+  font-size:115%;
+}
+
 .App-header {
   background-color:#BF7785;
   min-height: 100vh;
@@ -40,6 +46,7 @@ footer{
   right:100px;
   top:10px;
   color: black;
+  font-weight:bold;
 }
 
 
@@ -48,6 +55,13 @@ footer{
 } */
 
 /*Sidebar*/
+.routing-list-styling{
+  font-weight:bold;
+
+}
+
+
+
 .sidebar {
   display:flex;
   /* opacity:50%; */
@@ -185,6 +199,7 @@ margin-bottom: auto;
     #createId{
       color:#60545f;
       font-size:90%;
+      font-weight:bold;
       font-style: italic;
       margin-left: 50px;
       margin-bottom:-30px;
@@ -285,7 +300,6 @@ margin-bottom: auto;
   justify-content:row;
 }
 
-/*Mission */
 #missionText {
   padding: 10px;
   background-color:#ede6e9;
