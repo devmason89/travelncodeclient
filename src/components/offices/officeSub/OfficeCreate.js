@@ -76,7 +76,13 @@ return (
                             </Input>
 
                             <Label id="createLabels" htmlFor="rating"> Rating (1 is Poor, 5 is Great)</Label>
-                            <Input id="createInput" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
+                            <Input id="createInput" type="select" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}>
+                            <option value="DEFAULT">Choose a rating</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                             </Input>
                             <Button type="submit" id="createBtn" onClick={(e) => handleSubmit(e)}>Create Office</Button>
                      </CardText>

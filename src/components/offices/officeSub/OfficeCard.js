@@ -48,9 +48,6 @@ const OfficeCard = (props) => {
                     <CardText className="cardTextMapper">Rating:&nbsp; {office.rating}</CardText>
     
                     <div id="buttonRow">
-                    {/* <OfficeEdit office={office} officeToUpdate={props.officeToUpdate} updateOff={props.updateOff} updateOn={props.updateOn} token={props.token} fetchOffices={props.fetchOffices} updateOffice={props.updateOffice} setUpdateOffice={props.setUpdateOffice} editUpdateOffice={props.editUpdateOffice}
-                    clickLogout= {props.clickLogout}
-                   /> */}
                    <Button id="updateButton" onClick={() => {props.editUpdateOffice(office);  props.updateOn()}}>Update</Button>
         
                     <OfficeDelete popoverOpen={popoverOpen} token={props.token} fetchOffices={props.fetchOffices} office={office} toggle={toggle} index={index}/>
@@ -75,7 +72,7 @@ const OfficeCard = (props) => {
             <h6 id="createId">Create Office </h6>
         {isCreateShown && <OfficeCreate fetchOffices ={props.fetchOffices} closeCreate={closeCreate} token={props.token}/>}
         </div>
-        <h1 id="pastOffices">My Past Offices </h1>
+        <h1 id="pastOffices"> My Past Offices </h1>
         <div id="allCards">
             <CardDeck id="groupCards"> 
                 <Card id="myCard">

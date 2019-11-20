@@ -88,8 +88,12 @@ footer{
 
 #cardMapper{
   background-color:#FEDDAB;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 15px;
   border: 3px solid;
+  width: 200px;
+  border-radius: 10px;
+  background-image: url("./components/assets/45-degree-fabric-light.png");
+  
 }
 .modalButton {
   margin-right: 100%;
@@ -97,8 +101,13 @@ footer{
 
 #groupCards { 
   background-color:#60545f;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
   flex-direction:row;
+  padding:10px;
+  border: 3px outset black;
+  border-style: outset;
+  border-radius: 10px;
   
 }
 
@@ -106,6 +115,7 @@ footer{
 display: flex;
 flex-direction:row;
 background-color:#60545f;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 margin-bottom: auto; 
 }
 
@@ -144,10 +154,6 @@ margin-bottom: auto;
   #updateButton{
     background-color:#b45a22;
     font-family: 'Lobster', cursive;
-    font-size: 110%;
-    position:relative;
-    display:flex;
-    justify-content:center;
   }
 
   #pastOffices {
@@ -162,7 +168,7 @@ margin-bottom: auto;
   #img {
     display:flex;
     justify-content:flex-end;
-    flex-drection:row;
+    flex-direction:row;
   }
 
     #plus {
@@ -296,11 +302,10 @@ margin-bottom: auto;
   padding:10px;
 }
 
-.mainMission {
-  backgroundcolor:#ede6e9;
+.mainMission{
+  background-color: #ede6e9;
 }
 
 
-     
     
 
