@@ -33,9 +33,7 @@ const OfficeEdit = (props) => {
     }
 
     return(
-        <div>
-        <Button size="sm" id="updateButton" onClick={() => {props.updateOn();props.editUpdateOffice(props.office)}}>Update
-        <Modal id = "updateModal"isOpen={props.updateOffice}>
+        <Modal id="updateModal" isOpen={true}>
             
             <ModalHeader id="editModalTitle">Edit the {props.officeToUpdate.name} Office 
             <Button id="modalButton" onClick={ () => {props.updateOff()}} close /> </ModalHeader>
@@ -77,8 +75,6 @@ const OfficeEdit = (props) => {
                     </Form>
                 </ModalBody>
         </Modal>
-        </Button>
-    </div>
     )
 }
 
