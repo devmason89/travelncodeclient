@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import OfficeCard from './officeSub/OfficeCard'
+import OfficeEdit from './officeSub/OfficeEdit'
 import Footer from '../Footer'
 import APIURL from '../../helpers/environment';
 
@@ -48,6 +49,9 @@ const OfficeIndex = (props) => {
         <React.Fragment>
         <OfficeCard offices = {offices}  fetchOffices= {fetchOffices} token={props.token} officeToUpdate={officeToUpdate} editUpdateOffice={editUpdateOffice} updateOn={updateOn} updateOff={updateOff} updateOffice={updateOffice} setUpdateOffice={setUpdateOffice} updateToken={props.updateToken}
         clickLogout ={props.clickLogout} />
+        <div>
+            {updateOffice ? <OfficeEdit officeToUpdate={officeToUpdate} updateOff={updateOff} token={props.token} fetchOffices={fetchOffices}/>: <> </>}
+        </div>
         </React.Fragment>
     )
 }
