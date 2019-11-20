@@ -43,3 +43,8 @@
 #createLabels{
     color:white;
 }
+
+/*Home Page*/
+#homeHeader{
+    position:relative;
+}
